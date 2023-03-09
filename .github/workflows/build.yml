@@ -21,5 +21,13 @@ jobs:
       - name: Build
         run: go build
 
-      - name: Test
-        run: go test -v ./...
+      - name: Coverage
+        run: go test -short -coverprofile cover.out -covermode=atomic ./...
+
+      - name: Upload coverage report to Codacy
+        run: |
+          export PATH=$PATH:$(go env GOPATH)/bin
+          go get github.com/schrej/godacov
+          godacov -t $CODACY_TOKEN -r ./cover.out -c $GITHUB_SHA
+        env:
+          CODACY_TOKEN: ${{secrets.CODACY_PROJECT_TOKEN}}

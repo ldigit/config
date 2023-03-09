@@ -54,11 +54,7 @@ func LoadAndDecode(path string, v interface{}) error {
 		return nil
 	}
 
-	if err := yaml.Unmarshal(buf, v); err != nil {
-		return err
-	}
-
-	return nil
+	return yaml.Unmarshal(buf, v)
 }
 
 // Decode 获取指定KEY的结果值

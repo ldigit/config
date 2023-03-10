@@ -27,9 +27,7 @@ jobs:
       - name: Upload coverage report to Codacy
         run: |
           export PATH=$PATH:$(go env GOPATH)/bin
-          go get github.com/schrej/godacov
-          go install github.com/schrej/godacov
-          echo "SHA:$GITHUB_SHA"
+          go install github.com/schrej/godacov@latest
           godacov -t $CODACY_TOKEN -r ./cover.out -c $GITHUB_SHA
         env:
           CODACY_TOKEN: ${{secrets.CODACY_PROJECT_TOKEN}}

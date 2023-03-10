@@ -29,6 +29,11 @@ func TestGetString(t *testing.T) {
 			"this is a string",
 			"",
 		},
+		{
+			"not_exist_string",
+			"default",
+			"",
+		},
 	}
 
 	for _, tt := range tests {
@@ -51,6 +56,11 @@ func TestGetInt(t *testing.T) {
 		{
 			"demo_int",
 			1234567,
+			0,
+		},
+		{
+			"not_exist_int",
+			-1,
 			0,
 		},
 	}
@@ -77,6 +87,11 @@ func TestGetInt32(t *testing.T) {
 			1234567,
 			0,
 		},
+		{
+			"not_exist_int",
+			-1,
+			0,
+		},
 	}
 
 	for _, tt := range tests {
@@ -99,6 +114,11 @@ func TestGetInt64(t *testing.T) {
 		{
 			"demo_int",
 			1234567,
+			0,
+		},
+		{
+			"not_exist_int",
+			-1,
 			0,
 		},
 	}
@@ -125,11 +145,16 @@ func TestGetUint(t *testing.T) {
 			1234567,
 			0,
 		},
+		{
+			"not_exist_int",
+			4567,
+			0,
+		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			tt.rsp = cfg.GetUint(tt.name, 0)
+			tt.rsp = cfg.GetUint(tt.name, 4567)
 			if !reflect.DeepEqual(tt.rsp, tt.want) {
 				t.Errorf("%s got = %v, want %v", tt.name, tt.rsp, tt.want)
 			}
@@ -149,11 +174,16 @@ func TestGetUint32(t *testing.T) {
 			1234567,
 			0,
 		},
+		{
+			"not_exist_int",
+			4567,
+			0,
+		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			tt.rsp = cfg.GetUint32(tt.name, 0)
+			tt.rsp = cfg.GetUint32(tt.name, 4567)
 			if !reflect.DeepEqual(tt.rsp, tt.want) {
 				t.Errorf("%s got = %v, want %v", tt.name, tt.rsp, tt.want)
 			}
@@ -173,11 +203,16 @@ func TestGetUint64(t *testing.T) {
 			1234567,
 			0,
 		},
+		{
+			"not_exist_int",
+			4567,
+			0,
+		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			tt.rsp = cfg.GetUint64(tt.name, 0)
+			tt.rsp = cfg.GetUint64(tt.name, 4567)
 			if !reflect.DeepEqual(tt.rsp, tt.want) {
 				t.Errorf("%s got = %v, want %v", tt.name, tt.rsp, tt.want)
 			}
@@ -196,6 +231,11 @@ func TestGetBool(t *testing.T) {
 			"demo_bool",
 			true,
 			false,
+		},
+		{
+			"not_exist_bool",
+			false,
+			true,
 		},
 	}
 
@@ -221,11 +261,16 @@ func TestGetFloat32(t *testing.T) {
 			0.3214,
 			0,
 		},
+		{
+			"not_exist_float",
+			3.14159,
+			0,
+		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			tt.rsp = cfg.GetFloat32(tt.name, 0)
+			tt.rsp = cfg.GetFloat32(tt.name, 3.14159)
 			if !reflect.DeepEqual(tt.rsp, tt.want) {
 				t.Errorf("%s got = %v, want %v", tt.name, tt.rsp, tt.want)
 			}
@@ -245,11 +290,16 @@ func TestGetFloat64(t *testing.T) {
 			0.3214,
 			0,
 		},
+		{
+			"not_exist_float",
+			3.14159,
+			0,
+		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			tt.rsp = cfg.GetFloat64(tt.name, 0)
+			tt.rsp = cfg.GetFloat64(tt.name, 3.14159)
 			if !reflect.DeepEqual(tt.rsp, tt.want) {
 				t.Errorf("%s got = %v, want %v", tt.name, tt.rsp, tt.want)
 			}

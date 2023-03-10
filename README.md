@@ -6,6 +6,8 @@
 [![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/ldigit/config)](https://github.com/ldigit/config/blob/master/go.mod)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg)](http://copyfree.org)
 [![Go Report](https://goreportcard.com/badge/github.com/ldigit/config)](https://goreportcard.com/report/github.com/ldigit/config)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/43ca0a1bf7894ecb9389f0a1406b9fc5)](https://www.codacy.com/gh/ldigit/config/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=ldigit/config&amp;utm_campaign=Badge_Grade)
+[![Codacy Badge](https://app.codacy.com/project/badge/Coverage/43ca0a1bf7894ecb9389f0a1406b9fc5)](https://www.codacy.com/gh/ldigit/config/dashboard?utm_source=github.com&utm_medium=referral&utm_content=ldigit/config&utm_campaign=Badge_Coverage)
 
 ## Installation
 
